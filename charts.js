@@ -102,11 +102,29 @@ var final = sampleResults[0];
     Plotly.newPlot("bar", barData, barLayout);
 
     // Deliverable 2: 1. Create the trace for the bubble chart.
-
+var bubbleTrace [
+  {
+    x: ids,
+    y: values,
+    text: labels,
+    mode: 'markers',
+    marker: {
+      size: values,
+      color: ids,
+      colorscale: 'Jet'
+    }
+  }
+];
     // Deliverable 2: 2. Create the layout for the bubble chart.
-
-    // Deliverable 2: 3. Use Plotly to plot the data with the layout.
+var bubbleLayout = {
+    title: "Bellybutton Bacteria Samples",
+    xaxis: {title:"ids"},
+    hovermode: 'closest',
     
+};
+    // Deliverable 2: 3. Use Plotly to plot the data with the layout.
+    Plotly.newPlot("bubble", bubbleTrace, bubbleLayout);  
+
     // Deliverable 3: 4. Create the trace for the gauge chart.
     
     // Deliverable 3: 5. Create the layout for the gauge chart.
