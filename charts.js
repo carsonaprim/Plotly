@@ -70,7 +70,7 @@ var samples = data.samples;
     var gaugeArray = metadata.filter(data => data.id == sample);
 
     // Deliverable 1: 5. Create a variable that holds the first sample in the array.
-var final = sampleResults[0];
+var result = sampleFinal[0];
 
     // Deliverable 3: 2. Create a variable that holds the first sample in the metadata array.
  var firstSample = gaugeArray[0];
@@ -80,7 +80,7 @@ var final = sampleResults[0];
     var values = result.sample_values.slice(0,10).reverse();
 
     // Deliverable 3: 3. Create a variable that holds the washing frequency.
-    var washingFrequency = firstGauge.wfreq
+    var washingFrequency = firstSample.wfreq
     console.log(washingFrequency)
 
     // Deliverable 1: 7. Create the yticks for the bar chart.
@@ -105,15 +105,16 @@ var final = sampleResults[0];
     // Deliverable 1: 10. Use Plotly to plot the data with the layout. 
     Plotly.newPlot("bar", barData, barLayout);
 
+var values2 = result.sample_values;
     // Deliverable 2: 1. Create the trace for the bubble chart.
-var bubbleTrace [
+var bubbleTrace = [
   {
     x: ids,
-    y: values,
+    y: values2,
     text: labels,
     mode: 'markers',
     marker: {
-      size: values,
+      size: values2,
       color: ids,
       colorscale: 'Jet'
     }
@@ -140,11 +141,11 @@ var bubbleLayout = {
           axis: { range: [null, 10], tickwidth: 1, tickcolor: "black" },
           bar: {color: 'black'},
           steps: [
-            {range: [0, 2], color: 'red'},
-            {range: [2, 4], color: 'darkorange'},
+            {range: [0, 2], color: 'firebrick'},
+            {range: [2, 4], color: 'sandybrown'},
             {range: [4, 6], color: 'yellow'},
-            {range: [6, 8], color: 'lime'},
-            {range: [8, 10], color: 'deepskyblue'},
+            {range: [6, 8], color: 'chartreuse'},
+            {range: [8, 10], color: 'deepskyblue'}
           ]
         }
         }
